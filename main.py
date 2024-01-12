@@ -2,8 +2,8 @@ import requests
 import json
 import openai
 openai.api_base = "https://ai.devtool.tech/proxy/v1"
-openai.api_key = "sk-KYzhYJ3CFX7oSj***********************"
-amap_key = '537bc4b5be00c6a4676eec*********************'
+openai.api_key = "sk-KYzhYJ3CFX7oSj***********************" # chatgpt的key
+amap_key = '537bc4b5be00c6a4676eec*********************'  # 高德地图的key
 
 def get_adcode(address):
     url = 'https://restapi.amap.com/v3/geocode/geo'
@@ -120,9 +120,9 @@ def run_conversation(content):
             ],
         )
         return second_response.choices[0].message['content']
-
-print(run_conversation(content="What's the weather like in 辽宁省大连市金石滩?"))
-
+print(run_conversation(content="北京市海淀区现在天气怎么样?"))
+print("********************************************", end='\n\n')
 print(run_conversation(content="预测一下辽宁省大连市金石滩最近两天的天气? "))
+
 
 
